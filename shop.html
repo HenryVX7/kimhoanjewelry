@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Kim Hoan Jewelry</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <script src="general.js" defer></script>
+<body>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+
+    <nav id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">History</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <header class="playfair-display-header">
+        <a href="index.html">Kim Hoan Jewelry</a>
+    </header>
+
+    <div class="container">
+        <nav id="hyperphotos">
+            <a href="#rings">
+                <div class="navfilter">Rings<br><img src="Photos/Shop/navring.png"></div>
+            </a>
+            <a href="#necklaces">
+                <div class="navfilter">Necklaces<br><img src="Photos/Shop/navnecklace.png"></div>
+            </a>
+            <a href="#earrings">
+                <div class="navfilter">Earrings<br><img src="Photos/Shop/navearrings.png"></div>
+            </a>
+            <a href="#pendants">
+                <div class="navfilter">Pendants<br><img src="Photos/Shop/navpendant.png"></div>
+            </a>
+            <a href="#bracelets">
+                <div class="navfilter">Bracelets<br><img src="Photos/Shop/navbracelet.png"></div>
+            </a>
+        </nav>
+    </div>
+
+    <div class="container">
+
+        <h2 id="rings">Rings</h2>
+            <div class="product" onclick="openModal('Photos/rings.jpg')">
+                <img src="Photos/rings.jpg" alt="Assortment of Rings">
+                <p>Assortment of Rings</p>
+            </div>
+            <div class="product" onclick="openModal('Photos/ringsgold.jpg')">
+                <img src="Photos/ringsgold.jpg" alt="Gold Rings">
+                <p>Gold Rings</p>
+            </div>
+            <div class="product" onclick="openModal('Photos/ringsgoldjadependants.jpg')">
+                <img src="Photos/ringsgoldjadependants.jpg" alt="Gold Rings & Jade Pendants">
+                <p>Gold Rings & Jade Pendants</p>
+            </div>
+            <div class="product" onclick="openModal('Photos/ringsjade.jpg')">
+                <img src="Photos/ringsjade.jpg" alt="Jade Rings">
+                <p>Jade Rings</p>
+            </div>
+            <div class="product" onclick="openModal('Photos/ringspendants.jpg')">
+                <img src="Photos/ringspendants.jpg" alt="Rings & Pendants">
+                <p>Rings & Pendants</p>
+            </div>
+
+        <h2 id="necklaces">Necklaces</h2>
+        <div class="product" onclick="openModal('Photos/watchesringsbracelets.jpg')">
+            <img src="Photos/watchesringsbracelets.jpg" alt="Watches, Rings, & Bracelets">
+            <p>Watches, Rings, & Bracelets</p>
+        </div>
+
+        <h2 id="earrings">Earrings</h2>
+            <div class="product" onclick="openModal('Photos/earrings.jpg')">
+                <img src="Photos/earrings.jpg" alt="Gold Earrings">
+                <p>Gold Earrings</p>
+            </div>
+            <div class="product" onclick="openModal('Photos/earrings2.jpg')">
+                <img src="Photos/earrings2.jpg" alt="Assortment of Earrings">
+                <p>Jade Earrings</p>
+            </div> 
+            <div class="product" onclick="openModal('Photos/earrings3.jpg')">
+                <img src="Photos/earrings3.jpg" alt="Assortment of Earrings">
+                <p>Jade Earrings</p>
+            </div> 
+
+
+        <h2 id="pendants">Pendants</h2>
+            <div class="product" onclick="openModal('Photos/pendantsgold.jpg')">
+                <img src="Photos/pendantsgold.jpg" alt="Gold Pendants">
+                <p>Gold Pendants</p>
+            </div>
+            <div class="product" onclick="openModal('Photos/pendantsgold2.jpg')">
+                <img src="Photos/pendantsgold2.jpg" alt="Gold Pendants">
+                <p>Gold Pendants</p>
+            </div>
+            <div class="product" onclick="openModal('Photos/pendantsgold3.jpg')">
+                <img src="Photos/pendantsgold3.jpg" alt="Gold Pendants">
+                <p>Gold Pendants</p>
+            </div>
+            <div class="product" onclick="openModal('Photos/pendantsjade.jpg')">
+                <img src="Photos/pendantsjade.jpg" alt="Jade Pendants">
+                <p>Jade Pendants</p>
+            </div>
+
+            <h2 id="bracelets">Bracelets</h2>
+            <div class="product" onclick="openModal('Photos/bracelets.jpg')">
+                <img src="Photos/bracelets.jpg" alt="Gold Bracelets">
+                <p>Gold Bracelets</p>
+            </div>
+            <div class="product" onclick="openModal('Photos/braceletsjaderings.jpg')">
+                <img src="Photos/braceletsjaderings.jpg" alt="Jade Bracelets & Rings">
+                <p>Jade Bracelets & Rings</p>
+            </div>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+</body>
+
+<footer class="footer-nav">
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">History</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p class="copyright">© 2025 Kim Hoan Jewelry. All rights reserved.</p>
+</footer>
+
+</html>
+
+<!-- TEMPLATE
+<div class="product">
+    <img src="" alt="">
+    <p>ITEM - $9999</p>
+</div> 
+-->

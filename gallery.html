@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Kim Hoan Jewelry</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <script src="general.js" defer></script>
+<body>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">History</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <header class="playfair-display-header">
+        <a href="index.html">Kim Hoan Jewelry</a>
+    </header>
+
+    <div class="container">
+        <h2>Gallery</h2>
+
+    </div>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        const imageFiles = [
+    'bracelets.jpg',
+    'braceletsjaderings.jpg',
+    'earrings.jpg',
+    'earrings2.jpg',
+    'earrings3.jpg',
+    'pendantsgold.jpg',
+    'pendantsgold2.jpg',
+    'pendantsgold3.jpg',
+    'pendantsjade.jpg',
+    'rings.jpg',
+    'ringsgold.jpg',
+    'ringsgoldjadependants.jpg',
+    'ringsjade.jpg',
+    'ringspendants.jpg',
+    'watchesringsbracelets.jpg',
+  ];
+
+  const galleryContainer = document.querySelector('.container');
+
+  imageFiles.forEach(file => {
+    const div = document.createElement('div');
+    div.className = 'gallery-item';
+    div.onclick = () => openModal(`Photos/${file}`);
+
+    const img = document.createElement('img');
+    img.src = `Photos/${file}`;
+    img.alt = 'Gallery Item';
+    img.loading = 'lazy';
+
+    div.appendChild(img);
+    galleryContainer.appendChild(div);
+  });
+    </script>
+</body>
+
+<footer class="footer-nav">
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">History</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <p class="copyright">© 2025 Kim Hoan Jewelry. All rights reserved.</p>
+</footer>
+
+</html>
+
+<!-- TEMPLATE
+<div class="product">
+    <img src="" alt="">
+    <p>ITEM - $9999</p>
+</div> 
+-->
