@@ -370,6 +370,12 @@ img#aboutpic {
     width: 60%; height: auto;
 }
 
+@media screen and (max-width: 768px) {
+    img#aboutpic { 
+        width: 90%
+    }
+}
+
 /* Contact */
 
 div#contactinfo {
