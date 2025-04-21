@@ -56,6 +56,13 @@ header a {
     .header-icons, .icon-link {
         display: none;
     }
+    .menu-toggle {
+        left: 20px;
+        top: 20px;
+    }
+    .header-center {
+        font-size: 30px;
+    }
 }
 
 body {
