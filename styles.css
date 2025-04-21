@@ -5,15 +5,12 @@
     font-weight: bold;
     font-style: normal;
     font-size: 50px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
   }
-
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fdfdfd;
-    color: #252525;
-}
 
 header a:hover {
     color: #b5a165;
@@ -34,9 +31,6 @@ header a {
 }
 
 header .icon-link {
-    position: absolute;
-    right: 20px;
-    top: 25px;
     font-size: 24px;
     color: #000000;
     text-decoration: none;
@@ -47,6 +41,23 @@ header .icon-link:hover {
     color: #333;
 }
 
+.header-center a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd;
+    color: #252525;
+}
 
 .menu-toggle {
     position: absolute;
