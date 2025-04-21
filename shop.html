@@ -79,7 +79,6 @@
         
         ringsFiles.forEach(file => {
             const div = document.createElement('div');
-            div.className = 'ring-item';
             div.onclick = () => openModal(`Photos/${file}`);
 
             const img = document.createElement('img');
