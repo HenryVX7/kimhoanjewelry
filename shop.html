@@ -83,10 +83,14 @@
 
             const img = document.createElement('img');
             img.src = `Photos/${file}`;
-            img.alt = 'Rings Item';
+            img.alt = ringsLabels[file];
             img.loading = 'lazy';
 
+            const p = document.createElement('p');
+            p.textContent = ringsLabels[file];
+
             div.appendChild(img);
+            div.appendChild(p);
             ringsContainer.appendChild(div);
             console.log(ringsLabels[file]);
         });
