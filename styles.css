@@ -52,6 +52,12 @@ header a {
     gap: 20px;
 }
 
+@media screen and (max-width: 768px) {
+    .header-icons {
+        display: none;
+    }
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
