@@ -30,10 +30,6 @@ header a {
     transition: color 0.3s ease;
 }
 
-.icon-link:hover {
-    color: #333;
-}
-
 .header-center {
     display: block;
     text-align: center;
