@@ -68,7 +68,7 @@ body {
 
 .menu-toggle {
     position: absolute;
-    top: 35px;
+    top: 25px;
     left: 35px;
     font-size: 40px;
     cursor: pointer;
