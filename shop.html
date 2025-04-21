@@ -47,10 +47,8 @@
         </nav>
     </div>
 
-    <div class="container">
-        <div class="ringcontainer">
+    <div class="container" id="ringscontainer">
             <h2 id="rings">Rings</h2>
-        </div>
     </div>
 
     <div id="imageModal" class="modal" onclick="closeModal()">
@@ -75,7 +73,7 @@
             "ringspendants.jpg": "Rings & Pendants",
         };
 
-        const ringsContainer = document.querySelector('.ringcontainer');
+        const ringsContainer = document.querySelector('.container#ringscontainer');
         
         ringsFiles.forEach(file => {
             const div = document.createElement('div');
