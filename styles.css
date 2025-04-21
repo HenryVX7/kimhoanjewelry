@@ -52,22 +52,6 @@ header a {
     gap: 20px;
 }
 
-@media screen and (max-width: 768px) {
-    .header-icons, .icon-link {
-        display: none;
-    }
-
-    .menu-toggle {
-        left: 20px;
-        top: 20px;
-        font-size: 20px;
-    }
-
-    .header-center {
-        font-size: 30px;
-    }
-}
-
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -215,6 +199,21 @@ footer p {
     .footer-links {
         flex-direction: row;
         gap: 10px;
+    }
+
+    .header-icons, .icon-link {
+        display: none;
+    }
+
+    .menu-toggle {
+        top: 2%;
+        left: 2%;
+        font-size: 35px;
+        z-index: 1100;
+    }
+
+    .header-center {
+        font-size: 30px;
     }
 }
 
