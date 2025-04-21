@@ -46,8 +46,8 @@ header a {
 
 .header-icons {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 35px;
+    right: 35px;
     display: flex;
     gap: 20px;
 }
