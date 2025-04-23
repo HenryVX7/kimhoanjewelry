@@ -316,18 +316,13 @@ img#indexphoto {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .navfilter:hover {
     transform: translateY(-5px);
     background-color: #f9f4e4;
     color: #000000;
-}
-
-.navfilter {
-    display: inline-block;
-    text-decoration: none;
-    color: black;
 }
 
 .navfilter img {
@@ -390,6 +385,10 @@ img#indexphoto {
       max-width: 90vw;
       height: auto;
       border-radius: 8px;
+    }
+
+    .navfilter img {
+        width: 20%;
     }
   }
 
