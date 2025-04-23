@@ -83,6 +83,7 @@
         const ringsContainer = document.querySelector('.container#ringscontainer');
         
         function filesName(name) {
+            name.forEach(file => {
             const div = document.createElement('div');
             div.className = "product";
             div.onclick = () => openModal(`Photos/${file}`);
@@ -97,11 +98,11 @@
 
             div.appendChild(img);
             div.appendChild(p);
-
+            });
         };
 
-       ringsFiles.forEach(file => {
-            filesName(ringsFiles);
+
+        filesName(ringsFiles);
 
         // ringsFiles.forEach(file => {
         //     const div = document.createElement('div');
@@ -116,9 +117,9 @@
         //     const p = document.createElement('p');
         //     p.textContent = ringsLabels[file];
 
-            ringsContainer.appendChild(div);
-            console.log(ringsLabels[file]);
-        });
+        ringsContainer.appendChild(div);
+        console.log(ringsLabels[file]);
+    
 
         const necklacesFiles = [
             "watchesringsbracelets.jpg"
