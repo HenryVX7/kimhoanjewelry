@@ -79,30 +79,31 @@
             "ringsjade.jpg": "Jade Rings",
             "ringspendants.jpg": "Rings & Pendants",
         };
+        function generateJewelrySection(itemName, files, labels) {
+            const container = document.querySelector('.container#${itemName.toLowerCase()}container');
 
-        const ringsContainer = document.querySelector('.container#ringscontainer');
-        
-        function filesName(name) {
-            name.forEach(file => {
-            const div = document.createElement('div');
-            div.className = "product";
-            div.onclick = () => openModal(`Photos/${file}`);
+            files.forEach(file => {
+                const div = document.createElement('div');
+                div.className = "product";
+                div.onclick = () => openModal('Photos/${file}');
 
-            const img = document.createElement('img');
-            img.src = `Photos/${file}`;
-            img.alt = name[file];
-            img.loading = 'lazy';
+                const img = document.createElement('img');
+                img.src = 'Photos/${file}';
+                img.alt = labels[file];
+                img.loading = 'lazy';
 
-            const p = document.createElement('p');
-            p.textContent = name[file];
+                const p = document.createElement('p');
+                p.textContent = labels[file];
 
-            div.appendChild(img);
-            div.appendChild(p);
+                div.appendChild(img);
+                div.appendChild(p);
+            container.appendChild(div);
             });
         };
 
-
-        filesName(ringsFiles);
+        generateJewelerySection(rings, ringsFiles, ringsLabels);
+        // const ringsContainer = document.querySelector('.container#ringscontainer');
+        
 
         // ringsFiles.forEach(file => {
         //     const div = document.createElement('div');
@@ -117,8 +118,8 @@
         //     const p = document.createElement('p');
         //     p.textContent = ringsLabels[file];
 
-        ringsContainer.appendChild(div);
-        console.log(ringsLabels[file]);
+        // ringsContainer.appendChild(div);
+        // console.log(ringsLabels[file]);
     
 
         const necklacesFiles = [
