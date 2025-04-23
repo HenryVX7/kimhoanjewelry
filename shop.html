@@ -80,7 +80,7 @@
             "ringspendants.jpg": "Rings & Pendants",
         };
         function generateJewelrySection(itemName, files, labels) {
-            const container = document.querySelector('.container#${itemName}container');
+            const container = document.querySelector(`.container#${itemName}container`);
 
             files.forEach(file => {
                 const div = document.createElement('div');
