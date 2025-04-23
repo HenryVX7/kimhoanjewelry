@@ -79,16 +79,17 @@
             "ringsjade.jpg": "Jade Rings",
             "ringspendants.jpg": "Rings & Pendants",
         };
+
         function generateJewelrySection(itemName, files, labels) {
             const container = document.querySelector(`.container#${itemName}container`);
 
             files.forEach(file => {
                 const div = document.createElement('div');
                 div.className = "product";
-                div.onclick = () => openModal('Photos/${file}');
+                div.onclick = () => openModal(`Photos/${file}`);
 
                 const img = document.createElement('img');
-                img.src = 'Photos/${file}';
+                img.src = `Photos/${file}`;
                 img.alt = labels[file];
                 img.loading = 'lazy';
 
@@ -97,7 +98,7 @@
 
                 div.appendChild(img);
                 div.appendChild(p);
-            container.appendChild(div);
+                container.appendChild(div);
             });
         };
 
