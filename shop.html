@@ -82,21 +82,40 @@
 
         const ringsContainer = document.querySelector('.container#ringscontainer');
         
-        ringsFiles.forEach(file => {
+        function filesName(name) {
             const div = document.createElement('div');
             div.className = "product";
             div.onclick = () => openModal(`Photos/${file}`);
 
             const img = document.createElement('img');
             img.src = `Photos/${file}`;
-            img.alt = ringsLabels[file];
+            img.alt = name[file];
             img.loading = 'lazy';
 
             const p = document.createElement('p');
-            p.textContent = ringsLabels[file];
+            p.textContent = name[file];
 
             div.appendChild(img);
             div.appendChild(p);
+
+        };
+
+       ringFiles.forEach(file => {
+            filesName(ringFiles);
+
+        // ringsFiles.forEach(file => {
+        //     const div = document.createElement('div');
+        //     div.className = "product";
+        //     div.onclick = () => openModal(`Photos/${file}`);
+
+        //     const img = document.createElement('img');
+        //     img.src = `Photos/${file}`;
+        //     img.alt = ringsLabels[file];
+        //     img.loading = 'lazy';
+
+        //     const p = document.createElement('p');
+        //     p.textContent = ringsLabels[file];
+
             ringsContainer.appendChild(div);
             console.log(ringsLabels[file]);
         });
