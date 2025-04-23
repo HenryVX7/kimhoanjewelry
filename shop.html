@@ -54,16 +54,56 @@
         </nav>
     </div>
 
-    <div class="container" id="ringscontainer">
+    <!-- <div class="container" id="ringscontainer">
             <h2 id="rings">Rings</h2>
     </div>
 
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImg">
-    </div>
+    </div> -->
     
+    <div id="mainContainer"></div>
     <script>
+        function imageSection(id,name) {
+            const container = document.createElement('div');
+            container.className = 'container';
+            container.id = `${id}container`;
+
+            container.innerHTML = `
+                <h2 id="${id}">${name}</h2>
+                <div id="imageModal" class="modal" onclick="closeModal()">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="modalImg">
+                </div>
+            `;
+
+            document.getElementById('mainContainer').appendChild(container);
+        };
+
+        function jewelrySection(itemName, files, labels) {
+            const container = document.querySelector(`.container#${itemName}container`);
+
+            files.forEach(file => {
+                const div = document.createElement('div');
+                div.className = "product";
+                div.onclick = () => openModal(`Photos/${file}`);
+
+                const img = document.createElement('img');
+                img.src = `Photos/${file}`;
+                img.alt = labels[file];
+                img.loading = 'lazy';
+
+                const p = document.createElement('p');
+                p.textContent = labels[file];
+
+                div.appendChild(img);
+                div.appendChild(p);
+                container.appendChild(div);
+            });
+        };
+        // Rings 
+        imageSection('rings', "Rings");
         const ringsFiles = [
             "rings.jpg",
             "ringsgold.jpg",
@@ -71,7 +111,6 @@
             "ringsjade.jpg",
             "ringspendants.jpg",
         ];
-
         const ringsLabels = {
             "rings.jpg": "Assortment of Rings",
             "ringsgold.jpg": "Gold Rings",
@@ -79,121 +118,64 @@
             "ringsjade.jpg": "Jade Rings",
             "ringspendants.jpg": "Rings & Pendants",
         };
+        jewelrySection("rings", ringsFiles, ringsLabels);
 
-        const ringsContainer = document.querySelector('.container#ringscontainer');
-        
-        ringsFiles.forEach(file => {
-            const div = document.createElement('div');
-            div.className = "product";
-            div.onclick = () => openModal(`Photos/${file}`);
-
-            const img = document.createElement('img');
-            img.src = `Photos/${file}`;
-            img.alt = ringsLabels[file];
-            img.loading = 'lazy';
-
-            const p = document.createElement('p');
-            p.textContent = ringsLabels[file];
-
-            div.appendChild(img);
-            div.appendChild(p);
-            ringsContainer.appendChild(div);
-            console.log(ringsLabels[file]);
-        });
-
+        // Necklaces
+        imageSection('necklaces', "Necklaces");
         const necklacesFiles = [
             "watchesringsbracelets.jpg"
         ];
-
         const necklacesLabels = {
             "watchesringsbracelets.jpg": "Watches, Rings, & Bracelets"
         };
+        jewelrySection("necklaces", necklacesFiles, necklacesLabels);
 
-        const necklacesContainer = document.querySelector('.container#necklacescontainer');
-        
-        necklacesFiles.forEach(file => {
-            const div = document.createElement('div');
-            div.className = "product";
-            div.onclick = () => openModal(`Photos/${file}`);
+        // Earrings
+        imageSection('earrings', "Earrings");
+        const earringsFiles = [
+            "earrings.jpg",
+            "earrings2.jpg",
+            "earrings3.jpg"
+        ];
+        const earringsLabels = {
+            "earrings.jpg": "Gold Earrings",
+            "earrings2.jpg": "Assortment of Earrings",
+            "earrings3.jpg": "Assortment of Earrings"
+        };
+        jewelrySection("earrings", earringsFiles, earringsLabels);
 
-            const img = document.createElement('img');
-            img.src = `Photos/${file}`;
-            img.alt = necklacesLabels[file];
-            img.loading = 'lazy';
+        // Pendants
+        imageSection('pendants', "Pendants");
+        const pendantsFiles = [
+            "pendantsgold.jpg",
+            "pendantsgold2.jpg",
+            "pendantsgold3.jpg",
+            "pendantsjade.jpg"
+        ];
+        const pendantsLabels = {
+            "pendantsgold.jpg": "Gold Pendants",
+            "pendantsgold2.jpg": "Gold Pendants",
+            "pendantsgold3.jpg": "Gold Pendants",
+            "pendantsjade.jpg": "Jade Pendants"
+        };
+        jewelrySection("pendants",  pendantsFiles,  pendantsLabels);
 
-            const p = document.createElement('p');
-            p.textContent = necklacesLabels[file];
+        // Bracelets
+        imageSection('bracelets', "Bracelets");
+        const braceletsFiles = [
+            "bracelets.jpg",
+            "bracelets.jpg"
+        ];
+        const braceletsLabels = {
+            "bracelets.jpg": "Gold Bracelets",
+            "braceletsjaderings.jpg": "Jade Bracelets & Rings"
+        };
+        jewelrySection("bracelets",  braceletsFiles,  braceletsLabels);
 
-            div.appendChild(img);
-            div.appendChild(p);
-            ringsContainer.appendChild(div);
-            console.log(necklacesLabels[file]);
-        });        
-    </script>
+    </script> 
 </body>
  <!--   <div class="container">
     
-        <h2 id="rings">Rings</h2>
-            <div class="product" onclick="openModal('Photos/rings.jpg')">
-                <img src="Photos/rings.jpg" alt="Assortment of Rings">
-                <p>Assortment of Rings</p>
-            </div>
-            <div class="product" onclick="openModal('Photos/ringsgold.jpg')">
-                <img src="Photos/ringsgold.jpg" alt="Gold Rings">
-                <p>Gold Rings</p>
-            </div>
-            <div class="product" onclick="openModal('Photos/ringsgoldjadependants.jpg')">
-                <img src="Photos/ringsgoldjadependants.jpg" alt="Gold Rings & Jade Pendants">
-                <p>Gold Rings & Jade Pendants</p>
-            </div>
-            <div class="product" onclick="openModal('Photos/ringsjade.jpg')">
-                <img src="Photos/ringsjade.jpg" alt="Jade Rings">
-                <p>Jade Rings</p>
-            </div>
-            <div class="product" onclick="openModal('Photos/ringspendants.jpg')">
-                <img src="Photos/ringspendants.jpg" alt="Rings & Pendants">
-                <p>Rings & Pendants</p>
-            </div>
-
-        <h2 id="necklaces">Necklaces</h2>
-        <div class="product" onclick="openModal('Photos/watchesringsbracelets.jpg')">
-            <img src="Photos/watchesringsbracelets.jpg" alt="Watches, Rings, & Bracelets">
-            <p>Watches, Rings, & Bracelets</p>
-        </div>
-
-        <h2 id="earrings">Earrings</h2>
-            <div class="product" onclick="openModal('Photos/earrings.jpg')">
-                <img src="Photos/earrings.jpg" alt="Gold Earrings">
-                <p>Gold Earrings</p>
-            </div>
-            <div class="product" onclick="openModal('Photos/earrings2.jpg')">
-                <img src="Photos/earrings2.jpg" alt="Assortment of Earrings">
-                <p>Jade Earrings</p>
-            </div> 
-            <div class="product" onclick="openModal('Photos/earrings3.jpg')">
-                <img src="Photos/earrings3.jpg" alt="Assortment of Earrings">
-                <p>Jade Earrings</p>
-            </div> 
-
-
-        <h2 id="pendants">Pendants</h2>
-            <div class="product" onclick="openModal('Photos/pendantsgold.jpg')">
-                <img src="Photos/pendantsgold.jpg" alt="Gold Pendants">
-                <p>Gold Pendants</p>
-            </div>
-            <div class="product" onclick="openModal('Photos/pendantsgold2.jpg')">
-                <img src="Photos/pendantsgold2.jpg" alt="Gold Pendants">
-                <p>Gold Pendants</p>
-            </div>
-            <div class="product" onclick="openModal('Photos/pendantsgold3.jpg')">
-                <img src="Photos/pendantsgold3.jpg" alt="Gold Pendants">
-                <p>Gold Pendants</p>
-            </div>
-            <div class="product" onclick="openModal('Photos/pendantsjade.jpg')">
-                <img src="Photos/pendantsjade.jpg" alt="Jade Pendants">
-                <p>Jade Pendants</p>
-            </div>
-
             <h2 id="bracelets">Bracelets</h2>
             <div class="product" onclick="openModal('Photos/bracelets.jpg')">
                 <img src="Photos/bracelets.jpg" alt="Gold Bracelets">
