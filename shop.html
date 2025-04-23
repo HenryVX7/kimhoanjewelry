@@ -100,6 +100,35 @@
             ringsContainer.appendChild(div);
             console.log(ringsLabels[file]);
         });
+
+        const necklacesFiles = [
+            "watchesringsbracelets.jpg"
+        ];
+
+        const necklacesLabels = {
+            "watchesringsbracelets.jpg": "Watches, Rings, & Bracelets"
+        };
+
+        const necklacesContainer = document.querySelector('.container#necklacescontainer');
+        
+        necklacesFiles.forEach(file => {
+            const div = document.createElement('div');
+            div.className = "product";
+            div.onclick = () => openModal(`Photos/${file}`);
+
+            const img = document.createElement('img');
+            img.src = `Photos/${file}`;
+            img.alt = necklacesLabels[file];
+            img.loading = 'lazy';
+
+            const p = document.createElement('p');
+            p.textContent = necklacesLabels[file];
+
+            div.appendChild(img);
+            div.appendChild(p);
+            ringsContainer.appendChild(div);
+            console.log(necklacesLabels[file]);
+        });        
     </script>
 </body>
  <!--   <div class="container">
