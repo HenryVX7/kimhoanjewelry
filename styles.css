@@ -323,6 +323,11 @@ img#indexphoto {
     transform: translateY(-5px);
     background-color: #f9f4e4;
     color: #000000;
+    text-decoration: none;
+}
+
+.navfilter a:link, .navfilter a:visited {
+    color: #000000;
 }
 
 .navfilter img {
@@ -388,7 +393,7 @@ img#indexphoto {
     }
 
     .navfilter {
-        width: 20%;
+        width: 40%;
     }
 
     .navfilter img {
