@@ -4,6 +4,11 @@ img#aboutpic {
     width: 60%; height: auto;
 }
 
+div.container > p {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
 @media screen and (max-width: 768px) {
     img#aboutpic { 
         width: 90%
