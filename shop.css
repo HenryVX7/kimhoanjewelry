@@ -52,3 +52,28 @@
     height: auto;
     border-radius: 8px;
 }
+
+#hyperphotos.bar-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #f9f4e4;
+    padding: 15px 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 2px solid #ddd;
+}
+
+#hyperphotos.bar-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#hyperphotos.bar-links a:hover {
+    background-color: #b5a165;
+    color: white;
+}

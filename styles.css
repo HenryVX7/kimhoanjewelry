@@ -30,6 +30,10 @@ header a {
     transition: color 0.3s ease;
 }
 
+.icon-link#language-toggle:hover {
+    transform: scale(1.05);
+}
+
 .header-center {
     display: block;
     text-align: center;
@@ -58,10 +62,6 @@ body {
     padding: 0;
     background-color: #fdfdfd;
     color: #252525;
-}
-
-#vietnamese {
-    display: none;
 }
 
 .menu-toggle {
@@ -128,12 +128,12 @@ img {
     border-radius: 8px;
 }
 
-img#modalImg.modal-content {
+img#modelImg.model-content {
     width: 100%;
     height: auto;
 }
 
-.modal {
+.model {
     display: none;
     position: fixed;
     z-index: 2000;
@@ -149,7 +149,7 @@ img#modalImg.modal-content {
     align-items: center;
 }
 
-.modal-content {
+.model-content {
     margin: 5% auto;
     display: block;
     max-width: 90%;
