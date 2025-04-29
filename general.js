@@ -26,17 +26,25 @@ document.addEventListener('keydown', function(event) {
   document.addEventListener('DOMContentLoaded', function() {
     var toggleButton = document.getElementById('language-toggle');
   
-    var englishText = document.querySelectorAll('english');
-    var vietnameseText = document.querySelectorAll('vietnamese');
+    var englishText = document.querySelectorAll('#english');
+    var vietnameseText = document.querySelectorAll('#vietnamese');
     var savedLanguage = localStorage.getItem('language');
 
     if (savedLanguage === 'vietnamese') {
-      englishText.style.display = 'none';
-      vietnameseText.style.display = 'block';
-    } else {
-      englishText.style.display = 'block';
-      vietnameseText.style.display = 'none';
-    }
+        englishTexts.forEach(function(el) {
+          el.style.display = 'none';
+        });
+        vietnameseTexts.forEach(function(el) {
+          el.style.display = 'block';
+        });
+      } else {
+        englishTexts.forEach(function(el) {
+          el.style.display = 'block';
+        });
+        vietnameseTexts.forEach(function(el) {
+          el.style.display = 'none';
+        });
+      }
 
     if (toggleButton) {
       toggleButton.addEventListener('click', function() {
@@ -47,7 +55,9 @@ document.addEventListener('keydown', function(event) {
         vietnameseText.forEach(el => {
             el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'contents' : 'none';
         });
-        
+
+        var newLanguage = (englishTexts[0].style.display === 'none') ? 'vietnamese' : 'english';
+        localStorage.setItem('language', newLanguage);
       });
     }
   });
