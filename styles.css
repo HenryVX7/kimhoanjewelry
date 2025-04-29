@@ -60,6 +60,10 @@ body {
     color: #252525;
 }
 
+#vietnamese {
+    display: none;
+}
+
 .menu-toggle {
     position: absolute;
     top: 25px;
