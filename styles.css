@@ -60,14 +60,6 @@ body {
     color: #252525;
 }
 
-#english {
-    display: inherit;
-}
-
-#vietnamese {
-    display: none;
-}
-
 .menu-toggle {
     position: absolute;
     top: 25px;
