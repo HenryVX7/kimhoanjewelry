@@ -32,11 +32,11 @@ document.addEventListener('keydown', function(event) {
         var vietnameseText = document.getElementById('vietnamese');
   
         if (englishText.style.display === 'none') {
-          englishText.style.display = 'contents';
+          englishText.style.display = 'block';
           vietnameseText.style.display = 'none';
         } else {
           englishText.style.display = 'none';
-          vietnameseText.style.display = 'contents';
+          vietnameseText.style.display = 'block';
         }
       });
     }
