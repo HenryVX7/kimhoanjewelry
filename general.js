@@ -26,17 +26,28 @@ document.addEventListener('keydown', function(event) {
   document.addEventListener('DOMContentLoaded', function() {
     var toggleButton = document.getElementById('language-toggle');
   
+    var englishText = document.getElementById('english');
+    var vietnameseText = document.getElementById('vietnamese');
+
+    var savedLanguage = localStorage.getItem('language');
+    if (savedLanguage === 'vietnamese') {
+      englishText.style.display = 'none';
+      vietnameseText.style.display = 'block';
+    } else {
+      englishText.style.display = 'block';
+      vietnameseText.style.display = 'none';
+    }
+
     if (toggleButton) {
       toggleButton.addEventListener('click', function() {
-        var englishText = document.getElementById('english');
-        var vietnameseText = document.getElementById('vietnamese');
-  
         if (englishText.style.display === 'none') {
           englishText.style.display = 'block';
           vietnameseText.style.display = 'none';
+          localStorage.setItem('language', 'english');
         } else {
           englishText.style.display = 'none';
           vietnameseText.style.display = 'block';
+          localStorage.setItem('language', 'vietnamese');
         }
       });
     }
