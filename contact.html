@@ -31,26 +31,39 @@
         </div>
   
         <div class="header-icons">
+          <a id="language-toggle" class="icon-link" title="Switch Language"><i class="material-icons" style="font-size:36px">language</i></a>
           <a href="contact.html" class="icon-link" title="Contact Us"><i class="material-icons" style="font-size:36px">place</i></a>
           <a href="shop.html" class="icon-link" title="Shop"><i class="material-icons" style="font-size:36px">local_mall</i></a>
         </div>
       </header>
 
     <div class="container" id="contactinfo">
-        <h2>Get in Touch</h2>
-        <p><strong>We are moving locations soon!</strong></p>
-        <p>In June, come visit us at our new location, located at: <a href="https://maps.app.goo.gl/RkP2nkRkhPYsAXXeA" target="_blank">4542 N 19th Ave, Phoenix, AZ 85015</a></p>
+        <div id=english>
+            <h2>Get in Touch</h2>
+            <p><strong>We are moving locations soon!</strong></p>
+            <p>In June, come visit us at our new location, located at: <a href="https://maps.app.goo.gl/RkP2nkRkhPYsAXXeA" target="_blank">4542 N 19th Ave, Phoenix, AZ 85015</a></p>
+            <p><br>Email: <a href="mailto:support@kimhoanjewelry.com">support@kimhoanjewelry.com</a></p>
+            <p>Call Us: (602) 433-0234</p>
+            <p>Visit us at: <a href="https://maps.app.goo.gl/1Dqq6DoUogVAwNAe6" target="_blank">4141 N 35th Ave #5, Phoenix, AZ 85017</a></p>
+        </div>
+        <div id="vietnamese">
+        <h2>Liên hệ</h2>
+        <p><strong>Chúng tôi sẽ sớm chuyển địa điểm!</strong></p>
+        <p>Vào tháng 6, hãy đến thăm chúng tôi tại địa điểm mới của chúng tôi, tọa lạc tại: <a href="https://maps.app.goo.gl/RkP2nkRkhPYsAXXeA" target="_blank">4542 N 19th Ave, Phoenix, AZ 85015</a></p>
         <p><br>Email: <a href="mailto:support@kimhoanjewelry.com">support@kimhoanjewelry.com</a></p>
-        <p>Call Us: (602) 433-0234</p>
-        <p>Visit us at: <a href="https://maps.app.goo.gl/1Dqq6DoUogVAwNAe6" target="_blank">4141 N 35th Ave #5, Phoenix, AZ 85017</a></p>
+        <p>Gọi cho chúng tôi: (602) 433-0234</p>
+        <p>Ghé thăm chúng tôi tại: <a href="https://maps.app.goo.gl/1Dqq6DoUogVAwNAe6" target="_blank">4141 N 35th Ave #5, Phoenix, AZ 85017</a></p>
+    </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.193326061426!2d-112.13594612400306!3d33.496346946878184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b1367876a4ac7%3A0x1c9e89dc8015812!2sKim%20Hoan%20Jewelry!5e0!3m2!1sen!2sus!4v1744954844935!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <div class="contact-flex">
         <div>
-            <h2>Any Questions?</h2>
-            <p>Our advisors are here to give answers.</p>
-            <ul>
+            <h2 id="english">Any Questions?</h2>
+            <h2 id="vietnamese">Bạn có thắc mắc gì không?</h2>
+            <p id="english">Our advisors are here to give answers.</p>
+            <p id="vietnamese">Các cố vấn của chúng tôi ở đây để đưa ra câu trả lời.</p>
+            <ul id="english">
                 <li><strong>Sunday:</strong> 10 AM - 5 PM MST</li>
                 <li><strong>Monday:</strong> 10 AM - 5 PM MST</li>
                 <li><strong>Tuesday:</strong> CLOSED</li>
@@ -59,14 +72,27 @@
                 <li><strong>Friday:</strong> 10 AM - 5 PM MST</li>
                 <li><strong>Saturday:</strong> 10 AM - 5 PM MST</li>
             </ul>
+            <ul id="vietnamese">
+                <li><strong>Chủ nhật:</strong> 10 AM - 5 PM MST</li>
+                <li><strong>Thứ hai:</strong> 10 AM - 5 PM MST</li>
+                <li><strong>Thứ ba:</strong> CLOSED</li>
+                <li><strong>Thứ Tư:</strong> 10 AM - 5 PM MST</li>
+                <li><strong>Thứ năm:</strong> 10 AM - 5 PM MST</li>
+                <li><strong>Thứ sáu:</strong> 10 AM - 5 PM MST</li>
+                <li><strong>Thứ bảy:</strong> 10 AM - 5 PM MST</li>
+            </ul>
         </div>
     
         <div class="contact-form">
-            <h2>We'd Love for You to Reach Out</h2>
+            <h2 id="english">We'd Love for You to Reach Out</h2>
+            <h2 id="vietnamese">Chúng tôi rất mong bạn liên hệ</h2>
             <form action="#" method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
     
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
     

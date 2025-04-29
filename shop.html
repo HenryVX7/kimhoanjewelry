@@ -30,12 +30,34 @@
         </div>
   
         <div class="header-icons">
+          <a id="language-toggle" class="icon-link" title="Switch Language"><i class="material-icons" style="font-size:36px">language</i></a>
           <a href="contact.html" class="icon-link" title="Contact Us"><i class="material-icons" style="font-size:36px">place</i></a>
           <a href="shop.html" class="icon-link" title="Shop"><i class="material-icons" style="font-size:36px">local_mall</i></a>
         </div>
       </header>
 
-    <div class="container">
+      <div id="english">
+        <nav id="hyperphotos" class="bar-links">
+            <a href="#rings">Rings</a>
+            <a href="#necklaces">Necklaces</a>
+            <a href="#earrings">Earrings</a>
+            <a href="#pendants">Pendants</a>
+            <a href="#bracelets">Bracelets</a>
+          </nav>
+      </div>
+
+      <div id="vietnamese">
+        <nav id="hyperphotos" class="bar-links">
+            <a href="#rings">Nhẫn</a>
+            <a href="#necklaces">Vòng cổ</a>
+            <a href="#earrings">Hoa tai</a>
+            <a href="#pendants">Mặt dây chuyền</a>
+            <a href="#bracelets">Vòng tay</a>
+          </nav>
+      </div>
+
+      
+    <!-- <div class="container">
         <nav id="hyperphotos">
             <a href="#rings">
                 <div class="navfilter">Rings<br><img src="Photos/Shop/navring.png"></div>
@@ -53,7 +75,7 @@
                 <div class="navfilter">Bracelets<br><img src="Photos/Shop/navbracelet.png"></div>
             </a>
         </nav>
-    </div>
+    </div> -->
     
     <div id="mainContainer"></div>
     <script>
@@ -64,9 +86,9 @@
 
             container.innerHTML = `
                 <h2 id="${id}">${name}</h2>
-                <div id="imageModal" class="modal" onclick="closeModal()">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <img class="modal-content" id="modalImg">
+                <div id="imageModel" class="model" onclick="closeModel()">
+                    <span class="close" onclick="closeModel()">&times;</span>
+                    <img class="model-content" id="modelImg">
                 </div>
             `;
 
@@ -79,7 +101,7 @@
             files.forEach(file => {
                 const div = document.createElement('div');
                 div.className = "product";
-                div.onclick = () => openModal(`Photos/${file}`);
+                div.onclick = () => openModel(`Photos/${file}`);
 
                 const img = document.createElement('img');
                 img.src = `Photos/${file}`;
