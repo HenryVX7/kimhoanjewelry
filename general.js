@@ -26,10 +26,10 @@ document.addEventListener('keydown', function(event) {
   document.addEventListener('DOMContentLoaded', function() {
     var toggleButton = document.getElementById('language-toggle');
   
-    var englishText = document.getElementById('english');
-    var vietnameseText = document.getElementById('vietnamese');
-
+    var englishText = document.querySelectorAll('english');
+    var vietnameseText = document.querySelectorAll('vietnamese');
     var savedLanguage = localStorage.getItem('language');
+    
     if (savedLanguage === 'vietnamese') {
       englishText.style.display = 'none';
       vietnameseText.style.display = 'block';
