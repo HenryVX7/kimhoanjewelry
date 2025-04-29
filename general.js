@@ -29,7 +29,7 @@ document.addEventListener('keydown', function(event) {
     var englishText = document.querySelectorAll('english');
     var vietnameseText = document.querySelectorAll('vietnamese');
     var savedLanguage = localStorage.getItem('language');
-    
+
     if (savedLanguage === 'vietnamese') {
       englishText.style.display = 'none';
       vietnameseText.style.display = 'block';
@@ -40,15 +40,14 @@ document.addEventListener('keydown', function(event) {
 
     if (toggleButton) {
       toggleButton.addEventListener('click', function() {
-        if (englishText.style.display === 'none') {
-          englishText.style.display = 'block';
-          vietnameseText.style.display = 'none';
-          localStorage.setItem('language', 'english');
-        } else {
-          englishText.style.display = 'none';
-          vietnameseText.style.display = 'block';
-          localStorage.setItem('language', 'vietnamese');
-        }
+        englishText.forEach(el => {
+            el.style.display = (el.style.display === 'none') ? 'contents' : 'none';
+        });
+
+        vietnameseText.forEach(el => {
+            el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'contents' : 'none';
+        });
+        
       });
     }
   });
