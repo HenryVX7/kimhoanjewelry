@@ -30,37 +30,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var englishText = document.querySelectorAll('#english');
   var vietnameseText = document.querySelectorAll('#vietnamese');
-  var savedLanguage = localStorage.getItem('language');
+  const label = document.getElementById('language-label');
+  // var savedLanguage = localStorage.getItem('language');
 
-    if (savedLanguage === 'vietnamese') {
-        englishText.forEach(function(el) {
-          el.style.display = 'none';
-        });
-        vietnameseText.forEach(function(el) {
-          el.style.display = 'block';
-        });
-      } else {
-        englishText.forEach(function(el) {
-          el.style.display = 'block';
-        });
-        vietnameseText.forEach(function(el) {
-          el.style.display = 'none';
-        });
+  function showEnglish() {
+    englishText.forEach(el => el.style.display = 'block');
+    vietnameseText.forEach(el => el.style.display = 'none');
+    label.textContent = 'EN';
+    localStorage.setItem('language', 'english');
+  }
+
+  function showVietnamese() {
+    englishText.forEach(el => el.style.display = 'none');
+    vietnameseText.forEach(el => el.style.display = 'block');
+    label.textContent = 'VN';
+    localStorage.setItem('language', 'vietnamese');
+  }
+
+  const savedLanguage = localStorage.getItem('language');
+  if (savedLanguage === 'vietnamese') {
+    showVietnamese();
+  } else {
+    showEnglish();
   }
 
   if (toggleButton) {
-    toggleButton.addEventListener('click', function() {
-      englishText.forEach(el => {
-          el.style.display = (el.style.display === 'none') ? 'block' : 'none';
-      });
-
-      vietnameseText.forEach(el => {
-          el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
-      });
-
-      var newLanguage = (englishText[0].style.display === 'none') ? 'vietnamese' : 'english';
-      localStorage.setItem('language', newLanguage);
+    toggleButton.addEventListener('click', function () {
+      const isEnglishVisible = englishText[0].style.display !== 'none';
+      if (isEnglishVisible) {
+        showVietnamese();
+      } else {
+        showEnglish();
+      }
     });
   }
+
+  //   if (savedLanguage === 'vietnamese') {
+  //       englishText.forEach(function(el) {
+  //         el.style.display = 'none';
+  //       });
+  //       vietnameseText.forEach(function(el) {
+  //         el.style.display = 'block';
+  //         label.textContent = "VN";
+  //       });
+  //     } else {
+  //       englishText.forEach(function(el) {
+  //         el.style.display = 'block';
+  //         label.textContent = "EN";
+  //       });
+  //       vietnameseText.forEach(function(el) {
+  //         el.style.display = 'none';
+  //       });
+  // }
+
+  // if (toggleButton) {
+  //   toggleButton.addEventListener('click', function() {
+  //     englishText.forEach(el => {
+  //         el.style.display = (el.style.display === 'none') ? 'block' : 'none';
+  //         label.textContent = "EN";
+  //     });
+
+  //     vietnameseText.forEach(el => {
+  //         el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+  //         label.textContent = "VN";
+  //     });
+
+  //     var newLanguage = (englishText[0].style.display === 'none') ? 'vietnamese' : 'english';
+  //     localStorage.setItem('language', newLanguage);
+  //   });
+  // }
 });
   
