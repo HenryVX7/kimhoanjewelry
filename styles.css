@@ -243,5 +243,9 @@ footer p {
     .header-center {
         font-size: 30px;
     }
+
+    .footer-links a {
+        font-size: 12px;
+    }
 }
 

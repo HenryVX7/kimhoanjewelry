@@ -53,19 +53,19 @@
     border-radius: 8px;
 }
 
-#hyperphotos.bar-links {
+#shopnav.bar-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1%;
     background-color: #f9f4e4;
-    padding: 15px 0;
+    padding: 10px 0;
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     font-size: 18px;
     border-bottom: 2px solid #ddd;
 }
 
-#hyperphotos.bar-links a {
+#shopnav.bar-links a {
     text-decoration: none;
     color: #333;
     padding: 8px 15px;
@@ -73,7 +73,20 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#hyperphotos.bar-links a:hover {
+#shopnav.bar-links a:hover {
     background-color: #b5a165;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    #shopnav.bar-links {
+        gap: 0;
+        padding: 10px 0;
+        font-size: 13px;
+    }
+
+    #shopnav.bar-links a {
+        padding: 8px 10px;
+        border-radius: 8px;
+    }
 }
