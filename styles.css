@@ -24,10 +24,17 @@ header a {
 }
 
 .icon-link {
-    font-size: 24px;
     color: #000000;
     text-decoration: none;
     transition: color 0.3s ease;
+}
+
+.icon-link i {
+    font-size: 36px;
+}
+
+.icon-link span {
+    font-size: 24px;
 }
 
 .icon-link#language-toggle:hover {
@@ -206,8 +213,24 @@ footer p {
         gap: 10px;
     }
 
-    .header-icons, .icon-link {
+    .icon-link {
         display: none;
+    }
+
+    .header-icons a#language-toggle {
+        display: block;
+        position: relative;
+        font-size: 15px;
+        left: 50%;
+        margin-top: -15%;
+    }
+
+    .header-icons a#language-toggle i {
+        font-size: 30px;
+    }
+
+    .header-icons a#language-toggle span {
+        font-size: 15px;
     }
 
     .menu-toggle {

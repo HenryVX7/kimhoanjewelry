@@ -32,26 +32,26 @@ document.addEventListener('DOMContentLoaded', function() {
   var vietnameseText = document.querySelectorAll('#vietnamese');
   const label = document.getElementById('language-label');
 
-  function showEnglish() {
-    englishText.forEach(el => el.style.display = 'block');
-    vietnameseText.forEach(el => el.style.display = 'none');
-    label.textContent = 'EN';
-    localStorage.setItem('language', 'english');
-  }
+    function showEnglish() {
+      englishText.forEach(el => el.style.display = 'block');
+      vietnameseText.forEach(el => el.style.display = 'none');
+      label.textContent = 'EN';
+      localStorage.setItem('language', 'english');
+    }
 
-  function showVietnamese() {
-    englishText.forEach(el => el.style.display = 'none');
-    vietnameseText.forEach(el => el.style.display = 'block');
-    label.textContent = 'VN';
-    localStorage.setItem('language', 'vietnamese');
-  }
+    function showVietnamese() {
+      englishText.forEach(el => el.style.display = 'none');
+      vietnameseText.forEach(el => el.style.display = 'block');
+      label.textContent = 'VN';
+      localStorage.setItem('language', 'vietnamese');
+    }
 
   const savedLanguage = localStorage.getItem('language');
-  if (savedLanguage === 'vietnamese') {
-    showVietnamese();
-  } else {
-    showEnglish();
-  }
+    if (savedLanguage === 'vietnamese') {
+      showVietnamese();
+    } else {
+      showEnglish();
+    }
 
   if (toggleButton) {
     toggleButton.addEventListener('click', function () {
