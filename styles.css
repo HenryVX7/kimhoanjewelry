@@ -141,7 +141,7 @@ img#modelImg.model-content {
 }
 
 .model {
-    display: none;
+    display: flex;
     position: fixed;
     z-index: 2000;
     left: 0;
@@ -151,7 +151,6 @@ img#modelImg.model-content {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(5px);
-    display: flexbox;
     justify-content: center;
     align-items: center;
 }
