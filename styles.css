@@ -136,7 +136,7 @@ img {
 }
 
 img#modelImg.model-content {
-    width: 100%;
+    width: 70%;
     height: auto;
 }
 
@@ -245,6 +245,10 @@ footer p {
 
     .footer-links a {
         font-size: 12px;
+    }
+
+    img#modelImg.model-content {
+        width: 100%;
     }
 }
 

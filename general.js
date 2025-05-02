@@ -10,7 +10,7 @@ function toggleMenu() {
 function openModel(src) {
     const model = document.getElementById('imageModel');
     const modelImg = document.getElementById('modelImg');
-    model.style.display = "block";
+    model.style.display = "flex";
     modelImg.src = src;
 }
 
