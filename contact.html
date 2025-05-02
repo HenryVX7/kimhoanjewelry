@@ -97,7 +97,7 @@
         <div class="contact-form">
             <h2 id="english">We'd Love for You to Reach Out</h2>
             <h2 id="vietnamese">Chúng tôi rất mong bạn liên hệ</h2>
-            <form action="" method="post">
+            <form method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
     
@@ -114,7 +114,7 @@
             </form>
         </div>
     </div>
-    <script>
+    <script defer>
         document.addEventListener('DOMContentLoaded', function () {
             const phoneInput = document.getElementById('phone');
 
@@ -137,6 +137,24 @@
                 this.value = formatted;
              });
         });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.querySelector(".contact-form form");
+
+            if (form) {
+                form.addEventListener("submit", (e) => {
+                    const savedLanguage = localStorage.getItem('language');
+                    e.preventDefault();
+                    if (savedLanguage === 'vietnamese') {
+                        alert("Cảm ơn bạn! Tin nhắn của bạn đã được gửi.");
+                    } else {
+                        alert("Thank you! Your message has been submitted.");
+                    }
+                    form.reset();
+                });
+            }
+        });
+
     </script>
 </body>
 
