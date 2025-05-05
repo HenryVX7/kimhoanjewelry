@@ -98,19 +98,23 @@
             <h2 id="english">We'd Love for You to Reach Out</h2>
             <h2 id="vietnamese">Chúng tôi rất mong bạn liên hệ</h2>
             <form action="https://formspree.io/f/xwpoopqo" method="post">
-                <label for="name">Name:</label>
+                <label id="english" for="name">Name:</label>
+                <label id="vietnamese" for="name">Tên:</label>
                 <input type="text" name="name" id="name" required>
     
-                <label for="phone">Phone Number:</label>
+                <label id="english" for="phone">Phone Number:</label>
+                <label id="vietnamese" for="phone">Số điện thoại:</label>
                 <input type="tel" name="phone" id="phone" pattern="\d{3}-\d{3}-\d{4}" placeholder="480-123-1234" required>
 
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" required>
     
-                <label for="message">Message:</label>
+                <label id="english" for="message">Message:</label>
+                <label id="vietnamese" for="message">Tin nhắn:</label>
                 <textarea name="message" id="message" rows="5" required></textarea>
     
-                <button type="submit">Submit</button>
+                <button id="english" type="submit">Submit</button>
+                <button id="vietnamese" type="submit">Nộp</button>
             </form>
         </div>
     </div>
