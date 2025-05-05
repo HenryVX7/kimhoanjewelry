@@ -53,7 +53,7 @@
             <h2>Get in Touch</h2>
             <p><strong>We are moving locations soon!</strong></p>
             <p>In June, come visit us at our new location, located at: <a href="https://maps.app.goo.gl/RkP2nkRkhPYsAXXeA" target="_blank">4542 N 19th Ave, Phoenix, AZ 85015</a></p>
-            <p><br>Email: <a href="mailto:support@kimhoanjewelry.com">support@kimhoanjewelry.com</a></p>
+            <p><br>Email: <a href="mailto:sales@kimhoanjewelryphx.com">sales@kimhoanjewelryphx.com</a></p>
             <p>Call Us: (602) 433-0234</p>
             <p>Visit us at: <a href="https://maps.app.goo.gl/1Dqq6DoUogVAwNAe6" target="_blank">4141 N 35th Ave #5, Phoenix, AZ 85017</a></p>
         </div>
@@ -61,7 +61,7 @@
         <h2>Liên hệ</h2>
         <p><strong>Chúng tôi sẽ sớm chuyển địa điểm!</strong></p>
         <p>Vào tháng 6, hãy đến thăm chúng tôi tại địa điểm mới của chúng tôi, tọa lạc tại: <a href="https://maps.app.goo.gl/RkP2nkRkhPYsAXXeA" target="_blank">4542 N 19th Ave, Phoenix, AZ 85015</a></p>
-        <p><br>Email: <a href="mailto:support@kimhoanjewelry.com">support@kimhoanjewelry.com</a></p>
+        <p><br>Email: <a href="mailto:sales@kimhoanjewelryphx.com">sales@kimhoanjewelryphx.com</a></p>
         <p>Gọi cho chúng tôi: (602) 433-0234</p>
         <p>Ghé thăm chúng tôi tại: <a href="https://maps.app.goo.gl/1Dqq6DoUogVAwNAe6" target="_blank">4141 N 35th Ave #5, Phoenix, AZ 85017</a></p>
     </div>
@@ -97,18 +97,18 @@
         <div class="contact-form">
             <h2 id="english">We'd Love for You to Reach Out</h2>
             <h2 id="vietnamese">Chúng tôi rất mong bạn liên hệ</h2>
-            <form method="post">
+            <form action="https://formspree.io/f/xwpoopqo" method="post">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" name="name" id="name" required>
     
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" pattern="\d{3}-\d{3}-\d{4}" placeholder="480-123-1234" required>
+                <input type="tel" name="phone" id="phone" pattern="\d{3}-\d{3}-\d{4}" placeholder="480-123-1234" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" name="email" id="email" required>
     
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea name="message" id="message" rows="5" required></textarea>
     
                 <button type="submit">Submit</button>
             </form>
@@ -138,22 +138,21 @@
              });
         });
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const form = document.querySelector(".contact-form form");
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     const form = document.querySelector(".contact-form form");
 
-            if (form) {
-                form.addEventListener("submit", (e) => {
-                    const savedLanguage = localStorage.getItem('language');
-                    e.preventDefault();
-                    if (savedLanguage === 'vietnamese') {
-                        alert("Cảm ơn bạn! Tin nhắn của bạn đã được gửi.");
-                    } else {
-                        alert("Thank you! Your message has been submitted.");
-                    }
-                    form.reset();
-                });
-            }
-        });
+        //     if (form) {
+        //         form.addEventListener("submit", (e) => {
+        //             const savedLanguage = localStorage.getItem('language');
+        //             // e.preventDefault();
+        //             if (savedLanguage === 'vietnamese') {
+        //                 alert("Cảm ơn bạn! Tin nhắn của bạn đã được gửi.");
+        //             } else {
+        //                 alert("Thank you! Your message has been submitted.");
+        //             }
+        //         });
+        //     }
+        // });
 
     </script>
 </body>
