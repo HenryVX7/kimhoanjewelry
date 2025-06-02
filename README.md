@@ -5,3 +5,5 @@ Website created for both an IFT301 project but also to be used as a static/passi
 CI/CD implemented across both nodes
 
 Website needs location/about page updated and photos redone.
+
+Hi Khayu
