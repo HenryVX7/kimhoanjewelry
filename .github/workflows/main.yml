@@ -9,9 +9,25 @@ on:
       - main
       
 jobs:
-  deploy:
-    runs-on: self-hosted
+  deploy-to-rainfall:
+    runs-on: [self-hosted, rainfall]
+    steps:
+      - name: Update code from Git
+        working-directory: /var/www/kimhoanjewelry
+        run: |
+          echo "Fetching latest changes..."
+          git fetch --all
+          echo "Pulling latest changes..."
+          git pull
     
+      - name: Restart Apache service
+        run: |
+          echo "Restarting Apache..."
+          sudo /bin/systemctl restart apache2.service
+
+  deploy-to-snowfall:
+    runs-on: [self-hosted, snowfall]
+    needs: deploy-to-rainfall
     steps:
       - name: Update code from Git
         working-directory: /var/www/kimhoanjewelry
