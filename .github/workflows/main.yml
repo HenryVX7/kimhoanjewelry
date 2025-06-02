@@ -9,8 +9,19 @@ on:
       - main
       
 jobs:
-  run-local:
+  deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - run: cd /www/var/kimhoanjewelry && git fetch && git pull
-      - run: sudo /bin/systemctl restart apache2.service
+      - name: Update code from Git
+        working-directory: /www/var/kimhoanjewelry
+        run: |
+          echo "Fetching latest changes..."
+          git fetch --all
+          echo "Pulling latest changes..."
+          git pull
+    
+      - name: Restart Apache service
+        run: |
+          echo "Restarting Apache..."
+          sudo /bin/systemctl restart apache2.service
