@@ -1,0 +1,16 @@
+name: CICD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      
+jobs:
+  run-local:
+    runs-on: ubuntu-latest
+    steps:
+      - run: cd /www/var/kimhoanjewelry && git fetch && git pull
+      - run: sudo /bin/systemctl restart apache2.service
