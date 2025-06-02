@@ -14,7 +14,7 @@ jobs:
     
     steps:
       - name: Update code from Git
-        working-directory: /var/www/kimhoanjewelry/
+        working-directory: /var/www/kimhoanjewelry
         run: |
           echo "Fetching latest changes..."
           git fetch --all
