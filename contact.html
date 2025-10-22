@@ -314,15 +314,6 @@
                 <label id="vietnamese" for="message">Tin nhắn:</label>
                 <textarea name="message" id="message" rows="5" required></textarea>
 
-                <div class="file-upload-section">
-                    <label id="english" for="file-upload">Attach Photos (Optional):</label>
-                    <label id="vietnamese" for="file-upload">Đính kèm ảnh (Tùy chọn):</label>
-                    <p id="english" class="file-help-text">Upload reference photos for custom designs or repair requests (Max 5MB)</p>
-                    <p id="vietnamese" class="file-help-text">Tải lên ảnh tham khảo cho thiết kế tùy chỉnh hoặc yêu cầu sửa chữa (Tối đa 5MB)</p>
-                    <input type="file" name="file-upload" id="file-upload" accept="image/*" multiple>
-                    <div id="file-preview" class="file-preview"></div>
-                </div>
-
                 <button id="english" type="submit">Submit</button>
                 <button id="vietnamese" type="submit">Nộp</button>
             </form>
@@ -339,8 +330,6 @@
     <script defer>
         document.addEventListener('DOMContentLoaded', function () {
             const phoneInput = document.getElementById('phone');
-            const fileInput = document.getElementById('file-upload');
-            const filePreview = document.getElementById('file-preview');
             const form = document.getElementById('contact-form');
             const successMessage = document.getElementById('success-message');
 
@@ -362,31 +351,6 @@
                 }
 
                 this.value = formatted;
-            });
-
-            // File upload preview
-            fileInput.addEventListener('change', function(e) {
-                filePreview.innerHTML = '';
-                const files = Array.from(this.files);
-
-                if (files.length > 0) {
-                    files.forEach(file => {
-                        const fileSize = (file.size / 1024 / 1024).toFixed(2);
-                        if (fileSize > 5) {
-                            alert('File size exceeds 5MB. Please choose a smaller file.');
-                            this.value = '';
-                            return;
-                        }
-
-                        const fileInfo = document.createElement('div');
-                        fileInfo.className = 'file-info';
-                        fileInfo.innerHTML = `
-                            <i class="material-icons">attach_file</i>
-                            <span>${file.name} (${fileSize} MB)</span>
-                        `;
-                        filePreview.appendChild(fileInfo);
-                    });
-                }
             });
 
             // Form submission with success message
