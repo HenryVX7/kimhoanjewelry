@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Reset & pull latest changes
         run: |
-          cd /var/www/kimhoanjewelry/
+          cd /home/runner/kimhoanjewelry/
           git fetch
           git pull
 
