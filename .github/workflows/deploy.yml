@@ -18,4 +18,4 @@ jobs:
 
       - name: Reload Apache
         run: |
-          sudo -u runner /usr/bin/systemctl restart apache2.service
+          sudo /usr/bin/systemctl restart apache2.service
