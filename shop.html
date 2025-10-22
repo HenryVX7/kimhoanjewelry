@@ -157,7 +157,9 @@
                 const baseName = file.replace('.jpg', '');
                 const optimizedBase = `Photos/optimized/${baseName}`;
 
-                div.onclick = () => openModel(`Photos/${file}`);
+                // Use optimized 1920px WebP for modal, fallback to original
+                const modalSrc = `${optimizedBase}-1920.webp`;
+                div.onclick = () => openModel(modalSrc);
 
                 // Create picture element for responsive images
                 const picture = document.createElement('picture');

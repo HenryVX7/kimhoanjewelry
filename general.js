@@ -10,8 +10,20 @@ function toggleMenu() {
 function openModel(src) {
     const model = document.getElementById('imageModel');
     const modelImg = document.getElementById('modelImg');
+
+    // Show modal immediately
     model.style.display = "flex";
-    modelImg.src = src;
+
+    // Add loading state
+    modelImg.style.opacity = "0.5";
+
+    // Preload image for smooth transition
+    const newImg = new Image();
+    newImg.onload = function() {
+        modelImg.src = src;
+        modelImg.style.opacity = "1";
+    };
+    newImg.src = src;
 }
 
 function closeModel() {

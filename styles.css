@@ -138,6 +138,7 @@ img {
 img#modelImg.model-content {
     width: 70%;
     height: auto;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .model {
