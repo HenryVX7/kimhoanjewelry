@@ -3,8 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - Kim Hoan Jewelry</title>
-    
+
+    <!-- Primary Meta Tags -->
+    <title>Shop Gold & Jade Jewelry | Kim Hoan Jewelry Phoenix</title>
+    <meta name="title" content="Shop Gold & Jade Jewelry | Kim Hoan Jewelry Phoenix">
+    <meta name="description" content="Browse our collection of gold rings, jade bracelets, necklaces, earrings, and pendants. Premium Vietnamese jewelry crafted with care. Visit our Phoenix showroom or contact us for custom orders.">
+    <meta name="keywords" content="buy gold rings, jade bracelets phoenix, gold jewelry shop, jade necklaces, gold earrings, custom jewelry phoenix">
+
+    <!-- Language -->
+    <meta name="language" content="English, Vietnamese">
+    <link rel="alternate" hreflang="en" href="https://kimhoanjewelry.com/shop.html">
+    <link rel="alternate" hreflang="vi" href="https://kimhoanjewelry.com/shop.html">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kimhoanjewelry.com/shop.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kimhoanjewelry.com/shop.html">
+    <meta property="og:title" content="Shop Gold & Jade Jewelry | Kim Hoan Jewelry">
+    <meta property="og:description" content="Browse our collection of gold rings, jade bracelets, necklaces, earrings, and pendants. Premium Vietnamese jewelry in Phoenix.">
+    <meta property="og:image" content="https://kimhoanjewelry.com/Photos/rings.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="vi_VN">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kimhoanjewelry.com/shop.html">
+    <meta property="twitter:title" content="Shop Gold & Jade Jewelry | Kim Hoan Jewelry">
+    <meta property="twitter:description" content="Browse our collection of gold rings, jade bracelets, necklaces, earrings, and pendants.">
+    <meta property="twitter:image" content="https://kimhoanjewelry.com/Photos/rings.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="Photos/Favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="Photos/Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Photos/Favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Photos/Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="Photos/Favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="Photos/Favicon/android-chrome-512x512.png">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="shop.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,13 +127,16 @@
     
     <div id="mainContainer"></div>
     <script>
-        function imageSection(id,name) {
+        function imageSection(id, nameEn, nameVi) {
             const container = document.createElement('div');
             container.className = 'container';
             container.id = `${id}container`;
 
             container.innerHTML = `
-                <h2 id="${id}">${name}</h2>
+                <h2 id="${id}">
+                    <span id="english">${nameEn}</span>
+                    <span id="vietnamese">${nameVi}</span>
+                </h2>
                 <div id="imageModel" class="model" onclick="closeModel()">
                     <span class="close" onclick="closeModel()">&times;</span>
                     <img class="model-content" id="modelImg">
@@ -119,81 +159,155 @@
                 img.alt = labels[file];
                 img.loading = 'lazy';
 
-                const p = document.createElement('p');
-                p.textContent = labels[file];
-
                 div.appendChild(img);
-                div.appendChild(p);
                 container.appendChild(div);
             });
         };
-        // Rings 
-        imageSection('rings', "Rings");
+        // Rings
+        imageSection('rings', "Rings", "Nhẫn");
         const ringsFiles = [
-            "rings.jpg",
-            "ringsgold.jpg",
-            "ringsgoldjadependants.jpg",
-            "ringsjade.jpg",
-            "ringspendants.jpg",
+            "categories/Rings/20250804_143736.jpg",
+            "categories/Rings/20250804_143756.jpg",
+            "categories/Rings/20250804_143809.jpg",
+            "categories/Rings/20250804_143820.jpg",
+            "categories/Rings/20250804_143832.jpg",
+            "categories/Rings/20250804_143845.jpg",
+            "categories/Rings/20250804_143857.jpg",
+            "categories/Rings/20250804_143910.jpg",
+            "categories/Rings/20250804_143918.jpg",
+            "categories/Rings/20250804_143933.jpg",
+            "categories/Rings/20250804_143951.jpg"
         ];
         const ringsLabels = {
-            "rings.jpg": "Assortment of Rings",
-            "ringsgold.jpg": "Gold Rings",
-            "ringsgoldjadependants.jpg": "Gold Rings & Jade Pendants",
-            "ringsjade.jpg": "Jade Rings",
-            "ringspendants.jpg": "Rings & Pendants",
+            "categories/Rings/20250804_143736.jpg": "Gold & Jade Rings",
+            "categories/Rings/20250804_143756.jpg": "Gold & Jade Rings",
+            "categories/Rings/20250804_143809.jpg": "Gold & Jade Rings",
+            "categories/Rings/20250804_143820.jpg": "Gold & Jade Rings",
+            "categories/Rings/20250804_143832.jpg": "Gold & Jade Rings",
+            "categories/Rings/20250804_143845.jpg": "Gold & Jade Rings",
+            "categories/Rings/20250804_143857.jpg": "Gold & Jade Rings",
+            "categories/Rings/20250804_143910.jpg": "Gold & Jade Rings",
+            "categories/Rings/20250804_143918.jpg": "Gold & Jade Rings",
+            "categories/Rings/20250804_143933.jpg": "Gold & Jade Rings",
+            "categories/Rings/20250804_143951.jpg": "Gold & Jade Rings"
         };
         jewelrySection("rings", ringsFiles, ringsLabels);
 
         // Necklaces
-        imageSection('necklaces', "Necklaces");
+        imageSection('necklaces', "Necklaces", "Vòng cổ");
         const necklacesFiles = [
-            "watchesringsbracelets.jpg"
+            "categories/Necklaces/20250804_143254.jpg",
+            "categories/Necklaces/20250804_143325.jpg",
+            "categories/Necklaces/20250804_143345.jpg",
+            "categories/Necklaces/20250804_143401.jpg",
+            "categories/Necklaces/20250804_143416.jpg",
+            "categories/Necklaces/20250804_143436.jpg",
+            "categories/Necklaces/20250804_143500.jpg",
+            "categories/Necklaces/20250804_143513.jpg",
+            "categories/Necklaces/20250804_143536.jpg"
         ];
         const necklacesLabels = {
-            "watchesringsbracelets.jpg": "Watches, Rings, & Bracelets"
+            "categories/Necklaces/20250804_143254.jpg": "Gold & Jade Necklaces",
+            "categories/Necklaces/20250804_143325.jpg": "Gold & Jade Necklaces",
+            "categories/Necklaces/20250804_143345.jpg": "Gold & Jade Necklaces",
+            "categories/Necklaces/20250804_143401.jpg": "Gold & Jade Necklaces",
+            "categories/Necklaces/20250804_143416.jpg": "Gold & Jade Necklaces",
+            "categories/Necklaces/20250804_143436.jpg": "Gold & Jade Necklaces",
+            "categories/Necklaces/20250804_143500.jpg": "Gold & Jade Necklaces",
+            "categories/Necklaces/20250804_143513.jpg": "Gold & Jade Necklaces",
+            "categories/Necklaces/20250804_143536.jpg": "Gold & Jade Necklaces"
         };
         jewelrySection("necklaces", necklacesFiles, necklacesLabels);
 
         // Earrings
-        imageSection('earrings', "Earrings");
+        imageSection('earrings', "Earrings", "Hoa tai");
         const earringsFiles = [
-            "earrings.jpg",
-            "earrings2.jpg",
-            "earrings3.jpg"
+            "categories/Earrings/20250804_144240.jpg",
+            "categories/Earrings/20250804_144246.jpg",
+            "categories/Earrings/20250804_144256.jpg",
+            "categories/Earrings/20250804_144305.jpg"
         ];
         const earringsLabels = {
-            "earrings.jpg": "Gold Earrings",
-            "earrings2.jpg": "Assortment of Earrings",
-            "earrings3.jpg": "Assortment of Earrings"
+            "categories/Earrings/20250804_144240.jpg": "Gold & Jade Earrings",
+            "categories/Earrings/20250804_144246.jpg": "Gold & Jade Earrings",
+            "categories/Earrings/20250804_144256.jpg": "Gold & Jade Earrings",
+            "categories/Earrings/20250804_144305.jpg": "Gold & Jade Earrings"
         };
         jewelrySection("earrings", earringsFiles, earringsLabels);
 
         // Pendants
-        imageSection('pendants', "Pendants");
+        imageSection('pendants', "Pendants", "Mặt dây chuyền");
         const pendantsFiles = [
-            "pendantsgold.jpg",
-            "pendantsgold2.jpg",
-            "pendantsgold3.jpg",
-            "pendantsjade.jpg"
+            "categories/Pendants/20250804_144056.jpg",
+            "categories/Pendants/20250804_144104.jpg",
+            "categories/Pendants/20250804_144116.jpg",
+            "categories/Pendants/20250804_144125.jpg",
+            "categories/Pendants/20250804_144149.jpg",
+            "categories/Pendants/20250804_144421.jpg",
+            "categories/Pendants/20250804_144430.jpg",
+            "categories/Pendants/20250804_144437.jpg",
+            "categories/Pendants/20250804_144444.jpg",
+            "categories/Pendants/20250804_144456.jpg"
         ];
         const pendantsLabels = {
-            "pendantsgold.jpg": "Gold Pendants",
-            "pendantsgold2.jpg": "Gold Pendants",
-            "pendantsgold3.jpg": "Gold Pendants",
-            "pendantsjade.jpg": "Jade Pendants"
+            "categories/Pendants/20250804_144056.jpg": "Gold & Jade Pendants",
+            "categories/Pendants/20250804_144104.jpg": "Gold & Jade Pendants",
+            "categories/Pendants/20250804_144116.jpg": "Gold & Jade Pendants",
+            "categories/Pendants/20250804_144125.jpg": "Gold & Jade Pendants",
+            "categories/Pendants/20250804_144149.jpg": "Gold & Jade Pendants",
+            "categories/Pendants/20250804_144421.jpg": "Gold & Jade Pendants",
+            "categories/Pendants/20250804_144430.jpg": "Gold & Jade Pendants",
+            "categories/Pendants/20250804_144437.jpg": "Gold & Jade Pendants",
+            "categories/Pendants/20250804_144444.jpg": "Gold & Jade Pendants",
+            "categories/Pendants/20250804_144456.jpg": "Gold & Jade Pendants"
         };
         jewelrySection("pendants",  pendantsFiles,  pendantsLabels);
 
         // Bracelets
-        imageSection('bracelets', "Bracelets");
+        imageSection('bracelets', "Bracelets", "Vòng tay");
         const braceletsFiles = [
-            "bracelets.jpg",
-            "bracelets.jpg"
+            "categories/Bracelets/20250804_141948.jpg",
+            "categories/Bracelets/20250804_142659.jpg",
+            "categories/Bracelets/20250804_142710.jpg",
+            "categories/Bracelets/20250804_142731.jpg",
+            "categories/Bracelets/20250804_142746.jpg",
+            "categories/Bracelets/20250804_142757.jpg",
+            "categories/Bracelets/20250804_142809.jpg",
+            "categories/Bracelets/20250804_142828.jpg",
+            "categories/Bracelets/20250804_142839.jpg",
+            "categories/Bracelets/20250804_142852.jpg",
+            "categories/Bracelets/20250804_142902.jpg",
+            "categories/Bracelets/20250804_142915.jpg",
+            "categories/Bracelets/20250804_142924.jpg",
+            "categories/Bracelets/20250804_142935.jpg",
+            "categories/Bracelets/20250804_142956.jpg",
+            "categories/Bracelets/20250804_143005.jpg",
+            "categories/Bracelets/20250804_143020.jpg",
+            "categories/Bracelets/20250804_143031.jpg",
+            "categories/Bracelets/20250804_144346.jpg",
+            "categories/Bracelets/20250804_144403.jpg"
         ];
         const braceletsLabels = {
-            "bracelets.jpg": "Gold Bracelets",
-            "braceletsjaderings.jpg": "Jade Bracelets & Rings"
+            "categories/Bracelets/20250804_141948.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142659.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142710.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142731.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142746.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142757.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142809.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142828.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142839.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142852.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142902.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142915.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142924.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142935.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_142956.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_143005.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_143020.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_143031.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_144346.jpg": "Gold & Jade Bracelets",
+            "categories/Bracelets/20250804_144403.jpg": "Gold & Jade Bracelets"
         };
         jewelrySection("bracelets",  braceletsFiles,  braceletsLabels);
 

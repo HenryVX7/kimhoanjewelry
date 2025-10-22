@@ -1,5 +1,9 @@
 /* Shop */
 
+html {
+    scroll-behavior: smooth;
+}
+
 .navfilter {
     display: inline-block;
     margin: 20px;
@@ -9,7 +13,7 @@
     background: white;
     color: #000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
     text-decoration: none;
 }
@@ -19,6 +23,7 @@
     background-color: #f9f4e4;
     color: #000000;
     text-decoration: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .navfilter a:link, .navfilter a:visited {
@@ -39,18 +44,37 @@
     border-radius: 10px;
     background: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
     cursor: pointer;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .product:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .product img {
     width: 200px;
     height: auto;
     border-radius: 8px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product:hover img {
+    transform: scale(1.05);
 }
 
 #shopnav.bar-links {
@@ -78,6 +102,67 @@
     color: white;
 }
 
+.container h2 {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+    transition: color 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Modal transitions */
+.model {
+    transition: opacity 0.3s ease;
+}
+
+.model-content {
+    transition: transform 0.3s ease;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Stagger animation for products - extended to cover more items */
+.product:nth-child(1) { animation-delay: 0.05s; }
+.product:nth-child(2) { animation-delay: 0.1s; }
+.product:nth-child(3) { animation-delay: 0.15s; }
+.product:nth-child(4) { animation-delay: 0.2s; }
+.product:nth-child(5) { animation-delay: 0.25s; }
+.product:nth-child(6) { animation-delay: 0.3s; }
+.product:nth-child(7) { animation-delay: 0.35s; }
+.product:nth-child(8) { animation-delay: 0.4s; }
+.product:nth-child(9) { animation-delay: 0.45s; }
+.product:nth-child(10) { animation-delay: 0.5s; }
+.product:nth-child(11) { animation-delay: 0.55s; }
+.product:nth-child(12) { animation-delay: 0.6s; }
+.product:nth-child(13) { animation-delay: 0.65s; }
+.product:nth-child(14) { animation-delay: 0.7s; }
+.product:nth-child(15) { animation-delay: 0.75s; }
+.product:nth-child(16) { animation-delay: 0.8s; }
+.product:nth-child(17) { animation-delay: 0.85s; }
+.product:nth-child(18) { animation-delay: 0.9s; }
+.product:nth-child(19) { animation-delay: 0.95s; }
+.product:nth-child(20) { animation-delay: 1s; }
+.product:nth-child(n+21) { animation-delay: 1.05s; }
+
 @media screen and (max-width: 768px) {
     #shopnav.bar-links {
         gap: 0;
@@ -89,4 +174,7 @@
         padding: 8px 10px;
         border-radius: 8px;
     }
+
+    /* Reduce animation delays on mobile for faster loading feel */
+    .product:nth-child(n) { animation-delay: 0.1s; }
 }
