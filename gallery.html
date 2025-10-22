@@ -167,14 +167,43 @@
   imageFiles.forEach(file => {
     const div = document.createElement('div');
     div.className = 'gallery-item';
+
+    // Get base filename without extension
+    const baseName = file.replace('.jpg', '');
+    const optimizedBase = `Photos/optimized/${baseName}`;
+
     div.onclick = () => openModel(`Photos/${file}`);
 
+    // Create picture element for responsive images
+    const picture = document.createElement('picture');
+
+    // WebP sources for different screen sizes
+    const source1920 = document.createElement('source');
+    source1920.srcset = `${optimizedBase}-1920.webp`;
+    source1920.media = '(min-width: 1200px)';
+    source1920.type = 'image/webp';
+
+    const source1200 = document.createElement('source');
+    source1200.srcset = `${optimizedBase}-1200.webp`;
+    source1200.media = '(min-width: 800px)';
+    source1200.type = 'image/webp';
+
+    const source800 = document.createElement('source');
+    source800.srcset = `${optimizedBase}-800.webp`;
+    source800.type = 'image/webp';
+
+    // Fallback img
     const img = document.createElement('img');
     img.src = `Photos/${file}`;
     img.alt = 'Gallery Item';
     img.loading = 'lazy';
 
-    div.appendChild(img);
+    picture.appendChild(source1920);
+    picture.appendChild(source1200);
+    picture.appendChild(source800);
+    picture.appendChild(img);
+
+    div.appendChild(picture);
     galleryContainer.appendChild(div);
   });
     </script>
