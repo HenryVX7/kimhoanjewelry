@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Kim Hoan Jewelry - Family-owned Vietnamese jewelry store in Phoenix since 1972",
   "scripts": {
-    "optimize": "node optimize-images.js"
+    "optimize": "node optimize-images.js",
+    "optimize:new": "node optimize-images.js Photos/to-optimize",
+    "optimize:all": "node optimize-images.js Photos"
   },
   "keywords": [
     "jewelry",

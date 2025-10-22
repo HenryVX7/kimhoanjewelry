@@ -8,6 +8,10 @@ yarn.lock
 # Image backups (already have originals)
 Photos/originals/
 
+# Image optimization staging folder
+Photos/to-optimize/
+!Photos/to-optimize/README.md
+
 # macOS
 .DS_Store
 .AppleDouble

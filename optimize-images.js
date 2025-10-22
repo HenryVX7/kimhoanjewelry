@@ -3,24 +3,28 @@
 /**
  * Image Optimization Script for Kim Hoan Jewelry
  *
- * This script automatically optimizes all images in the Photos directory:
+ * This script automatically optimizes images from a specific input folder:
  * - Converts JPG/PNG to WebP format (90% smaller)
  * - Creates responsive image sizes (mobile, tablet, desktop)
  * - Compresses original formats with quality optimization
  * - Preserves originals in Photos/originals backup folder
  *
  * Usage:
- *   npm install          # Install dependencies first
- *   npm run optimize     # Run optimization
+ *   npm install                         # Install dependencies first
+ *   npm run optimize                    # Optimize all Photos (default)
+ *   npm run optimize Photos/to-optimize # Optimize specific folder
  */
 
 const sharp = require('sharp');
 const fs = require('fs').promises;
 const path = require('path');
 
+// Get input directory from command line argument or use default
+const customInputDir = process.argv[2];
+
 // Configuration
 const CONFIG = {
-  inputDir: './Photos',
+  inputDir: customInputDir || './Photos',
   outputDir: './Photos/optimized',
   backupDir: './Photos/originals',
 
@@ -168,6 +172,9 @@ async function main() {
   console.log('================================================\n');
 
   try {
+    // Display input directory
+    console.log(`📂 Input directory: ${CONFIG.inputDir}\n`);
+
     // Create directories
     await createDirectories();
 
@@ -178,6 +185,7 @@ async function main() {
 
     if (imageFiles.length === 0) {
       console.log('No images found to optimize.');
+      console.log(`\n💡 Tip: Place images in ${CONFIG.inputDir} to optimize them.`);
       return;
     }
 
