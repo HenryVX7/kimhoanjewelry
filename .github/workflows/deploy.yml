@@ -17,6 +17,6 @@ jobs:
           git clean -fd
           git pull origin main
 
-      - name: Reload NGINX
+      - name: Reload Apache
         run: |
           sudo /usr/bin/systemctl restart apache2.service
