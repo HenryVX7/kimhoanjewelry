@@ -13,8 +13,8 @@ jobs:
       - name: Reset & pull latest changes
         run: |
           cd /var/www/kimhoanjewelry/
-          git fetch
-          git pull
+          GIT_SSH_COMMAND='ssh -i /home/runner/.ssh/runner -o IdentitiesOnly=yes -o UserKnownHostsFile=/home/runner/.ssh/known_hosts' git -C /var/www/kimhoanjewelry fetch
+          GIT_SSH_COMMAND='ssh -i /home/runner/.ssh/runner -o IdentitiesOnly=yes -o UserKnownHostsFile=/home/runner/.ssh/known_hosts' git -C /var/www/kimhoanjewelry pull
 
       - name: Reload Apache
         run: |
