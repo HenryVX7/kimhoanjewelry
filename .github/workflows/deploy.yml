@@ -13,9 +13,8 @@ jobs:
       - name: Reset & pull latest changes
         run: |
           cd /var/www/kimhoanjewelry/
-          git reset --hard HEAD
-          git clean -fd
-          git pull origin main
+          git fetch
+          git pull
 
       - name: Reload Apache
         run: |
