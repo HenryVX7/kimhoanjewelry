@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <!-- Primary Meta Tags -->
     <title>Shop Gold & Jade Jewelry | Kim Hoan Jewelry Phoenix</title>
     <meta name="title" content="Shop Gold & Jade Jewelry | Kim Hoan Jewelry Phoenix">
-    <meta name="description" content="Browse our collection of gold rings, jade bracelets, necklaces, earrings, and pendants. Premium Vietnamese jewelry crafted with care. Visit our Phoenix showroom or contact us for custom orders.">
-    <meta name="keywords" content="buy gold rings, jade bracelets phoenix, gold jewelry shop, jade necklaces, gold earrings, custom jewelry phoenix">
+    <meta name="description"
+        content="Browse our collection of gold rings, jade bracelets, necklaces, earrings, and pendants. Premium Vietnamese jewelry crafted with care. Visit our Phoenix showroom or contact us for custom orders.">
+    <meta name="keywords"
+        content="buy gold rings, jade bracelets phoenix, gold jewelry shop, jade necklaces, gold earrings, custom jewelry phoenix">
 
     <!-- Language -->
     <meta name="language" content="English, Vietnamese">
@@ -22,7 +25,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kimhoanjewelry.com/shop.html">
     <meta property="og:title" content="Shop Gold & Jade Jewelry | Kim Hoan Jewelry">
-    <meta property="og:description" content="Browse our collection of gold rings, jade bracelets, necklaces, earrings, and pendants. Premium Vietnamese jewelry in Phoenix.">
+    <meta property="og:description"
+        content="Browse our collection of gold rings, jade bracelets, necklaces, earrings, and pendants. Premium Vietnamese jewelry in Phoenix.">
     <meta property="og:image" content="https://kimhoanjewelry.com/Photos/rings.jpg">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="vi_VN">
@@ -31,7 +35,8 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://kimhoanjewelry.com/shop.html">
     <meta property="twitter:title" content="Shop Gold & Jade Jewelry | Kim Hoan Jewelry">
-    <meta property="twitter:description" content="Browse our collection of gold rings, jade bracelets, necklaces, earrings, and pendants.">
+    <meta property="twitter:description"
+        content="Browse our collection of gold rings, jade bracelets, necklaces, earrings, and pendants.">
     <meta property="twitter:image" content="https://kimhoanjewelry.com/Photos/rings.jpg">
 
     <!-- Favicon -->
@@ -46,10 +51,13 @@
     <link rel="stylesheet" href="shop.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="general.js" defer></script>
+    <script src="prefetch-manager.js" defer></script>
+
 <body>
     <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav id="sidebar">
@@ -74,37 +82,40 @@
 
     <header class="playfair-display-header">
         <div class="header-center">
-          <a href="index.html">Kim Hoan Jewelry</a>
+            <a href="index.html">Kim Hoan Jewelry</a>
         </div>
-  
-        <div class="header-icons">
-          <a id="language-toggle" class="icon-link" title="Switch Language"><i class="material-icons" style="font-size:36px">language</i><span id="language-label">EN</span></a>
-          <a href="contact.html" class="icon-link" title="Contact Us"><i class="material-icons" style="font-size:36px">place</i></a>
-          <a href="shop.html" class="icon-link" title="Shop"><i class="material-icons" style="font-size:36px">local_mall</i></a>
-        </div>
-      </header>
 
-      <div id="english">
+        <div class="header-icons">
+            <a id="language-toggle" class="icon-link" title="Switch Language"><i class="material-icons"
+                    style="font-size:36px">language</i><span id="language-label">EN</span></a>
+            <a href="contact.html" class="icon-link" title="Contact Us"><i class="material-icons"
+                    style="font-size:36px">place</i></a>
+            <a href="shop.html" class="icon-link" title="Shop"><i class="material-icons"
+                    style="font-size:36px">local_mall</i></a>
+        </div>
+    </header>
+
+    <div id="english">
         <nav id="shopnav" class="bar-links">
             <a href="#rings">Rings</a>
             <a href="#necklaces">Necklaces</a>
             <a href="#earrings">Earrings</a>
             <a href="#pendants">Pendants</a>
             <a href="#bracelets">Bracelets</a>
-          </nav>
-      </div>
+        </nav>
+    </div>
 
-      <div id="vietnamese">
+    <div id="vietnamese">
         <nav id="shopnav" class="bar-links">
             <a href="#rings">Nhẫn</a>
             <a href="#necklaces">Vòng cổ</a>
             <a href="#earrings">Hoa tai</a>
             <a href="#pendants">Mặt dây chuyền</a>
             <a href="#bracelets">Vòng tay</a>
-          </nav>
-      </div>
+        </nav>
+    </div>
 
-      
+
     <!-- <div class="container">
         <nav id="hyperphotos">
             <a href="#rings">
@@ -124,7 +135,7 @@
             </a>
         </nav>
     </div> -->
-    
+
     <div id="mainContainer"></div>
     <script>
         function imageSection(id, nameEn, nameVi) {
@@ -292,7 +303,7 @@
             "categories/Pendants/20250804_144444.jpg": "Gold & Jade Pendants",
             "categories/Pendants/20250804_144456.jpg": "Gold & Jade Pendants"
         };
-        jewelrySection("pendants",  pendantsFiles,  pendantsLabels);
+        jewelrySection("pendants", pendantsFiles, pendantsLabels);
 
         // Bracelets
         imageSection('bracelets', "Bracelets", "Vòng tay");
@@ -340,9 +351,9 @@
             "categories/Bracelets/20250804_144346.jpg": "Gold & Jade Bracelets",
             "categories/Bracelets/20250804_144403.jpg": "Gold & Jade Bracelets"
         };
-        jewelrySection("bracelets",  braceletsFiles,  braceletsLabels);
+        jewelrySection("bracelets", braceletsFiles, braceletsLabels);
 
-    </script> 
+    </script>
 </body>
 
 <footer class="footer-nav">
