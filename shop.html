@@ -47,8 +47,516 @@
     <link rel="icon" type="image/png" sizes="192x192" href="Photos/Favicon/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="Photos/Favicon/android-chrome-512x512.png">
 
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="shop.css">
+    <style>
+        /* General */
+        .playfair-display-header {
+            font-family: "Playfair Display", serif;
+            padding: 20px;
+            position: relative;
+        }
+
+        header a:hover {
+            color: #b5a165;
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        header a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .icon-link {
+            color: #000000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .icon-link i {
+            font-size: 36px;
+        }
+
+        .icon-link span {
+            font-size: 24px;
+        }
+
+        .icon-link#language-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        .header-center {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+        .header-center a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .header-icons {
+            position: absolute;
+            top: 35px;
+            right: 35px;
+            display: flex;
+            gap: 20px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfdfd;
+            color: #252525;
+        }
+
+        .menu-toggle {
+            position: absolute;
+            top: 25px;
+            left: 35px;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 1001;
+            transition: color 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            color: #b5a165;
+
+        }
+
+        nav#sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            padding-top: 60px;
+            transition: left 0.3s ease;
+            z-index: 1000;
+        }
+
+        nav#sidebar>a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+
+        nav#sidebar>a:hover {
+            background-color: #f4f4f4;
+            color: #b5a165;
+        }
+
+        nav.open#sidebar {
+            left: 0;
+        }
+
+        .container {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        img#modelImg.model-content {
+            width: 70%;
+            height: auto;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        .model {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .model-content {
+            margin: 5% auto;
+            display: block;
+            max-width: 90%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: white;
+            border-top: 2px solid #ddd;
+            font-family: 'Playfair Display', serif;
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #b5a165;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #999;
+            margin: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .footer-links {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .icon-link {
+                display: none;
+            }
+
+            .header-icons a#language-toggle {
+                display: block;
+                position: relative;
+                font-size: 15px;
+                left: 50%;
+                margin-top: -15%;
+            }
+
+            .header-icons a#language-toggle i {
+                font-size: 30px;
+            }
+
+            .header-icons a#language-toggle span {
+                font-size: 15px;
+            }
+
+            .menu-toggle {
+                top: 2%;
+                left: 2%;
+                font-size: 35px;
+                z-index: 1100;
+            }
+
+            .header-center {
+                font-size: 30px;
+            }
+
+            .footer-links a {
+                font-size: 12px;
+            }
+
+            img#modelImg.model-content {
+                width: 100%;
+            }
+        }
+    </style>
+    <style>
+        /* Shop */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #vietnamese {
+            display: none;
+        }
+
+        .navfilter {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+            color: #000000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .navfilter:hover {
+            transform: translateY(-5px);
+            background-color: #f9f4e4;
+            color: #000000;
+            text-decoration: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .navfilter a:link,
+        .navfilter a:visited {
+            color: #000000;
+        }
+
+        .navfilter img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .product img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .product:hover img {
+            transform: scale(1.05);
+        }
+
+        #shopnav.bar-links {
+            display: flex;
+            justify-content: center;
+            gap: 1%;
+            background-color: #f9f4e4;
+            padding: 10px 0;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            font-size: 18px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        #shopnav.bar-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #shopnav.bar-links a:hover {
+            background-color: #b5a165;
+            color: white;
+        }
+
+        .container h2 {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+            transition: color 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Modal transitions */
+        .model {
+            transition: opacity 0.3s ease;
+        }
+
+        .model-content {
+            transition: transform 0.3s ease;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Stagger animation for products - extended to cover more items */
+        .product:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+
+        .product:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .product:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+
+        .product:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+
+        .product:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+
+        .product:nth-child(6) {
+            animation-delay: 0.3s;
+        }
+
+        .product:nth-child(7) {
+            animation-delay: 0.35s;
+        }
+
+        .product:nth-child(8) {
+            animation-delay: 0.4s;
+        }
+
+        .product:nth-child(9) {
+            animation-delay: 0.45s;
+        }
+
+        .product:nth-child(10) {
+            animation-delay: 0.5s;
+        }
+
+        .product:nth-child(11) {
+            animation-delay: 0.55s;
+        }
+
+        .product:nth-child(12) {
+            animation-delay: 0.6s;
+        }
+
+        .product:nth-child(13) {
+            animation-delay: 0.65s;
+        }
+
+        .product:nth-child(14) {
+            animation-delay: 0.7s;
+        }
+
+        .product:nth-child(15) {
+            animation-delay: 0.75s;
+        }
+
+        .product:nth-child(16) {
+            animation-delay: 0.8s;
+        }
+
+        .product:nth-child(17) {
+            animation-delay: 0.85s;
+        }
+
+        .product:nth-child(18) {
+            animation-delay: 0.9s;
+        }
+
+        .product:nth-child(19) {
+            animation-delay: 0.95s;
+        }
+
+        .product:nth-child(20) {
+            animation-delay: 1s;
+        }
+
+        .product:nth-child(n+21) {
+            animation-delay: 1.05s;
+        }
+
+        @media screen and (max-width: 768px) {
+            #shopnav.bar-links {
+                gap: 0;
+                padding: 10px 0;
+                font-size: 13px;
+            }
+
+            #shopnav.bar-links a {
+                padding: 8px 10px;
+                border-radius: 8px;
+            }
+
+            /* Reduce animation delays on mobile for faster loading feel */
+            .product:nth-child(n) {
+                animation-delay: 0.1s;
+            }
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
