@@ -11,6 +11,9 @@ class PrefetchManager {
     init() {
         console.log("PrefetchManager initialized.");
         this.setupLinkPrefetching();
+
+        // Preload key pages after a short delay
+        this.preloadWithDelay(['services.html', 'about.html', 'contact.html'], 3000);
     }
 
     /**
@@ -24,6 +27,17 @@ class PrefetchManager {
                 link.addEventListener('touchstart', () => this.prefetchUrl(link.href), { passive: true });
             }
         });
+    }
+
+    /**
+     * Preloads a list of URLs after a specified delay.
+     * @param {string[]} urls - List of URLs to prefetch.
+     * @param {number} delay - Delay in milliseconds.
+     */
+    preloadWithDelay(urls, delay) {
+        setTimeout(() => {
+            urls.forEach(url => this.prefetchUrl(url));
+        }, delay);
     }
 
     /**
