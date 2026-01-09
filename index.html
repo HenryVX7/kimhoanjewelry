@@ -308,6 +308,68 @@
     }
   </style>
   <style>
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 80vh;
+      min-height: 500px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('Photos/Store.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      margin-bottom: 60px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      max-width: 600px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background-color: #b5a165;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-btn:hover {
+      background-color: #9e8c56;
+      transform: translateY(-2px);
+    }
+
+    @media screen and (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        padding: 0 20px;
+      }
+    }
+  </style>
+  <style>
     /* Index */
 
     .sections {
@@ -396,6 +458,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="animations.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
@@ -442,8 +505,14 @@
     </div>
   </header>
 
+  <section class="hero">
+    <h1>Kim Hoan Jewelry</h1>
+    <p>Phoenix Gold & Jade Since 1972</p>
+    <a href="shop.html" class="hero-btn">Shop Now</a>
+  </section>
+
   <main class="sections">
-    <section class="split">
+    <section class="split fade-in-section">
       <div class="image">
         <picture>
           <source srcset="Photos/optimized/Index/shop-1920.webp" media="(min-width: 1200px)" type="image/webp">
@@ -467,7 +536,7 @@
       </div>
     </section>
 
-    <section class="split reverse">
+    <section class="split reverse fade-in-section">
       <div class="image">
         <picture>
           <source srcset="Photos/optimized/Index/gallery-1920.webp" media="(min-width: 1200px)" type="image/webp">
@@ -495,7 +564,7 @@
       </div>
     </section>
 
-    <section class="split">
+    <section class="split fade-in-section">
       <div class="image">
         <picture>
           <source srcset="Photos/optimized/Index/services-1920.webp" media="(min-width: 1200px)" type="image/webp">
@@ -551,7 +620,7 @@
       </div>
     </section>
 
-    <section class="split">
+    <section class="split fade-in-section">
       <div class="image">
         <picture>
           <source srcset="Photos/optimized/Index/contact-1920.webp" media="(min-width: 1200px)" type="image/webp">
